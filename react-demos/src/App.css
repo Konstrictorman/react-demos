@@ -1,0 +1,131 @@
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.top-bar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.top-bar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.left-bar {
+  width: 250px;
+  background: #f8f9fa;
+  border-right: 1px solid #e0e0e0;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.left-bar h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.left-bar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-bar nav li {
+  margin-bottom: 0.5rem;
+}
+
+.left-bar nav button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.left-bar nav button:hover {
+  background: #e9ecef;
+  border-color: #667eea;
+  transform: translateX(4px);
+}
+
+.left-bar nav button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  font-weight: 500;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background: white;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #666;
+}
+
+.welcome h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.welcome p {
+  font-size: 1.1rem;
+}
+
+.task-container h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.footer {
+  background: #2d3748;
+  color: #a0aec0;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 1px solid #4a5568;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
