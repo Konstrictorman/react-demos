@@ -11,18 +11,20 @@ const initialFields = {
   cvv: "",
 };
 
+type FieldKey = keyof typeof initialFields;
+
 const validators = {
-  number: (value) => /^\d{16}$/.test(value),
-  name: (value) => /^[a-zA-Z]+$/.test(value),
-  month: (value) => /^(0[1-9]|1[0-2])$/.test(value),
-  year: (value) => {
+  number: (value: string) => /^\d{16}$/.test(value),
+  name: (value: string) => /^[a-zA-Z]+$/.test(value),
+  month: (value: string) => /^(0[1-9]|1[0-2])$/.test(value),
+  year: (value: string) => {
     if (!/^\d{4}$/.test(value)) {
       return false;
     }
     const year = Number(value);
     return year >= CURRENT_YEAR && year <= CURRENT_YEAR + 3;
   },
-  cvv: (value) => /^\d{3}$/.test(value),
+  cvv: (value: string) => /^\d{3}$/.test(value),
 };
 
 const errorMessages = {
@@ -41,7 +43,7 @@ const errorTestIds = {
   cvv: "cvvInputError",
 };
 
-const FIELD_KEYS = ["number", "name", "month", "year", "cvv"];
+const FIELD_KEYS: FieldKey[] = ["number", "name", "month", "year", "cvv"];
 
 const createInitialErrors = () => ({
   number: { touched: false, hasError: false },
@@ -59,7 +61,7 @@ const PaymentValidation = () => {
   const allTouched = FIELD_KEYS.every((field) => errors[field]?.touched);
   const submitEnabled = allValid && allTouched;
 
-  const updateField = (field, value) => {
+  const updateField = (field: FieldKey, value: string) => {
     if (!validators[field]) {
       return;
     }
@@ -80,7 +82,7 @@ const PaymentValidation = () => {
   const displayCvv = fields.cvv || "CVV";
 
   return (
-    <div className="mt-30 layout-column justify-content-center align-items-center">
+    <div className="layout-column align-items-center">
       <div className="card outlined" style={{ width: "650px" }}>
         <div data-testid="debit-card" className="debit-card">
           <h3>Card Details</h3>

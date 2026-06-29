@@ -2,7 +2,7 @@
 
 Complete a component that accepts and validates credit card information. The component should display a live debit-card preview and a form with real-time validation.
 
-**Primary file:** `PaymentValidation.jsx` (with companion `PaymentValidation.css`)
+**Primary file:** `PaymentValidation.tsx` (with companion `PaymentValidation.css`)
 
 ---
 
@@ -33,16 +33,31 @@ These values should update as the user types in the corresponding form fields.
 
 ### Form fields
 
-| Field        | Placeholder    | Test ID         |
-| ------------ | -------------- | --------------- |
-| Card Number  | `Card Number`  | `numberInput`   |
-| Name On Card | `Name On Card` | `nameInput`     |
-| Expiry Month | `Expiry Month` | `monthInput`    |
-| Expiry Year  | `Expiry Year`  | `yearInput`     |
-| CVV          | `CVV`          | `cvvInput`      |
-| Submit       | `Submit`       | `submit-button` |
-
 Error messages are rendered in `<p className="invalid-text">` elements below each input.
+
+**Card Number**
+- Placeholder: `Card Number`
+- Test ID: `numberInput`
+
+**Name On Card**
+- Placeholder: `Name On Card`
+- Test ID: `nameInput`
+
+**Expiry Month**
+- Placeholder: `Expiry Month`
+- Test ID: `monthInput`
+
+**Expiry Year**
+- Placeholder: `Expiry Year`
+- Test ID: `yearInput`
+
+**CVV**
+- Placeholder: `CVV`
+- Test ID: `cvvInput`
+
+**Submit**
+- Label: `Submit`
+- Test ID: `submit-button`
 
 ---
 
@@ -103,27 +118,23 @@ The form should call `e.preventDefault()` on submit.
 
 Do **not** change the following `data-testid` attributes (they are required for automated tests):
 
-### Inputs
+### Inputs and preview
 
-| Element                | `data-testid`   |
-| ---------------------- | --------------- |
-| Card number input      | `numberInput`   |
-| Cardholder name input  | `nameInput`     |
-| Expiration month input | `monthInput`    |
-| Expiration year input  | `yearInput`     |
-| CVV / CVC input        | `cvvInput`      |
-| Submit button          | `submit-button` |
-| Debit card preview     | `debit-card`    |
+- **Card number input** — `numberInput`
+- **Cardholder name input** — `nameInput`
+- **Expiration month input** — `monthInput`
+- **Expiration year input** — `yearInput`
+- **CVV / CVC input** — `cvvInput`
+- **Submit button** — `submit-button`
+- **Debit card preview** — `debit-card`
 
 ### Error message elements
 
-| Element                | `data-testid`      |
-| ---------------------- | ------------------ |
-| Card number error      | `numberInputError` |
-| Cardholder name error  | `nameInputError`   |
-| Expiration month error | `monthInputError`  |
-| Expiration year error  | `yearInputError`   |
-| CVV error              | `cvvInputError`    |
+- **Card number error** — `numberInputError`
+- **Cardholder name error** — `nameInputError`
+- **Expiration month error** — `monthInputError`
+- **Expiration year error** — `yearInputError`
+- **CVV error** — `cvvInputError`
 
 ---
 

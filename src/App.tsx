@@ -1,16 +1,34 @@
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import ListAltIcon from "@mui/icons-material/ListAlt";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import TimerIcon from "@mui/icons-material/Timer";
 import { useState } from "react";
 import "./App.css";
+import LeftBar from "./components/LeftBar/LeftBar";
+import CreditCard from "./tasks/creditCard/CreditCard";
 
 const TASKS = [
-  { id: "music-player", name: "Music Player" },
-  { id: "time-bomb", name: "Time Bomb" },
-  { id: "timer", name: "Timer" },
-  { id: "virtual-list", name: "Virtual List" },
-  { id: "credit-card", name: "Credit Card" },
+  { id: "music-player", name: "Music Player", icon: MusicNoteIcon },
+  { id: "time-bomb", name: "Time Bomb", icon: TimerIcon },
+  { id: "timer", name: "Timer", icon: AccessTimeIcon },
+  { id: "virtual-list", name: "Virtual List", icon: ListAltIcon },
+  { id: "credit-card", name: "Credit Card", icon: CreditCardIcon },
 ];
 
 function App() {
-  const [selectedTask, setSelectedTask] = useState(null);
+  const [selectedTask, setSelectedTask] = useState<string | undefined>(
+    undefined,
+  );
+
+  const getTaskComponent = (taskId: string) => {
+    switch (taskId) {
+      case "credit-card":
+        return <CreditCard />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="app-container">
@@ -19,29 +37,15 @@ function App() {
       </header>
 
       <div className="main-layout">
-        <aside className="left-bar">
-          <nav>
-            <h2>Tasks</h2>
-            <ul>
-              {TASKS.map((task) => (
-                <li key={task.id}>
-                  <button
-                    className={selectedTask === task.id ? "active" : ""}
-                    onClick={() => setSelectedTask(task.id)}
-                  >
-                    {task.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </aside>
-
+        <LeftBar
+          selectedTask={selectedTask}
+          setSelectedTask={setSelectedTask}
+          tasks={TASKS}
+        />
         <main className="content">
           {selectedTask ? (
             <div className="task-container">
-              <h2>{TASKS.find((t) => t.id === selectedTask)?.name}</h2>
-              <p>Task component will be loaded here.</p>
+              {getTaskComponent(selectedTask)}
             </div>
           ) : (
             <div className="welcome">

@@ -1,0 +1,27 @@
+.leftBar {
+  background: #f8f9fa;
+  border-right: 1px solid #e0e0e0;
+  padding: 0.5rem;
+  overflow-y: auto;
+}
+
+.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  border-color: #667eea;
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leftBar-collapsed {
+  width: 36px;
+}
+
+.leftBar-uncollapsed {
+  width: 180px;
+}
