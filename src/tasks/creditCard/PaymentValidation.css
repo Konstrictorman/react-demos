@@ -1,0 +1,142 @@
+.mt-30 {
+  margin-top: 30px;
+}
+
+.layout-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.pa-50 {
+  padding: 50px;
+}
+
+.mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.card.outlined {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.debit-card {
+  position: relative;
+  background: linear-gradient(135deg, #f5a623 0%, #e8960c 100%);
+  color: #fff;
+  padding: 20px 30px 30px;
+  min-height: 180px;
+  border-radius: 4px 4px 0 0;
+}
+
+.debit-card h3 {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.debit-card-bank-name {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.debit-card-number {
+  display: block;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.debit-card-stripe {
+  background: #000;
+  height: 40px;
+  margin: 0 -30px 20px;
+}
+
+.debit-card-holder-name,
+.debit-card-expiry,
+.debit-card-cvv {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.debit-card-holder-name {
+  float: left;
+}
+
+.debit-card-expiry {
+  display: inline-block;
+  margin-left: 30%;
+}
+
+.debit-card-cvv {
+  float: right;
+}
+
+.debit-card::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.invalid-text {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 24px;
+  background: #a8d5a2;
+  border: 1px solid #8bc986;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:not(:disabled):hover {
+  background: #95c990;
+}
